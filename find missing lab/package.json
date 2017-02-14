@@ -1,0 +1,11 @@
+{
+  "name": "find-missing-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jasmine tests.js"
+  },
+  "author": "Yinka Alabi",
+  "license": "ISC"
+}
