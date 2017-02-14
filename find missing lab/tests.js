@@ -41,4 +41,20 @@ describe("Find missing number two lists: ", function() {
 
   });
 
+  describe("Cases for the bigger array being the first parameter", function() {
+
+    it("should return 5 for [1,2,5], [1,2]", function() {
+      expect(app.findMissing([1, 2, 5], [1, 2])).toEqual(5);
+    });
+
+    it("should return 10 for [4, 6, 8, 10],[4, 6, 8]", function() {
+      expect(app.findMissing([4, 6, 8, 10], [4, 6, 8])).toEqual(10);
+    });
+
+    it("should return 3 for [5, 4, 7, 6, 3, 11, 66],[5, 4, 7, 6, 11, 66]", function() {
+      expect(app.findMissing([5, 4, 7, 6, 3, 11, 66], [5, 4, 7, 6, 11, 66])).toEqual(3);
+    });
+
+  });
+
 });

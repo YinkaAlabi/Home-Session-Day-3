@@ -10,9 +10,9 @@ function findMissing(arr1, arr2){
 		var arr3 = arr1.slice();
 		var arr4 = arr2.slice();
 	}
-	for (num of arr3){
-		if (!arr4.includes(num)){
-			return num;
+	for (num of arr3){					//loop the elements of the bigger array
+		if (!arr4.includes(num)){		//check for the elements in the smaller array
+			return num;					//return the one not in the smaller array
 		}
 		
 	}
