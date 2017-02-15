@@ -1,0 +1,11 @@
+{
+  "name": "arrays-lab",
+  "version": "1.0.0",
+  "description": "Several functionalities around arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine test.js"
+  },
+  "author": "Yinka Alabi",
+  "license": "ISC"
+}
