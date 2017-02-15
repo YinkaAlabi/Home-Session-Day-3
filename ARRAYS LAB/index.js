@@ -98,13 +98,4 @@ Array.prototype.search = function(num){
 }
 
 
-var oneToTwenty = [].toTwenty();
-var search  = oneToTwenty.search(6);
 
-// var twoToForty = [].toForty();
-// var search  = twoToForty.search(40);
-
-// var tenToOneThousand = [].toOneThousand();
-// var search  = tenToOneThousand.search(40);
-
-console.log(search);
