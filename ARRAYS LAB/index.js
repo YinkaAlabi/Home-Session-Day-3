@@ -50,27 +50,33 @@ Array.prototype.search = function(num){
             break;
         }
 
-        if(Math.abs(num - this[mid]) > Math.abs(num - this[high]) && Math.abs(num - this[mid]) <= Math.abs(num - this[low])){
+        if(Math.abs(num - this[mid]) > Math.abs(num - this[high])  ){
             low = mid;
             mid = (low + high)/2 | 0;
-            //console.log('low', low, mid);
         }
 
         else if(Math.abs(num - this[mid]) < Math.abs(num - this[high]) && Math.abs(num - this[mid]) <= Math.abs(num - this[low])){
+            if(Math.abs(num - this[high]) < Math.abs(num - this[low])){
+                low = mid;
+                mid = (low + high)/2 | 0;
+            }
+            else{
+                high = mid;
+                mid = (low + high)/2 | 0;
+            }
+        }
+        else if(Math.abs(num - this[mid]) < Math.abs(num - this[high]) && Math.abs(num - this[mid]) > Math.abs(num - this[low])) {
             high = mid;
             mid = (low + high)/2 | 0;
-            //console.log('high', high, mid);
         }
 
 
 
         if (this[mid] < num){
             low = mid + 1;
-            //console.log('low2', low, mid);
         }
         else if (this[mid] > num){
             high = mid - 1;
-            //console.log('high2', high, mid);
         }
         else{
             found = true;
@@ -93,7 +99,7 @@ Array.prototype.search = function(num){
 
 
 var oneToTwenty = [].toTwenty();
-var search  = oneToTwenty.search(16);
+var search  = oneToTwenty.search(6);
 
 // var twoToForty = [].toForty();
 // var search  = twoToForty.search(40);
