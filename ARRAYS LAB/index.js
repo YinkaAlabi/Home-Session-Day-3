@@ -22,12 +22,52 @@ Array.prototype.toOneThousand = function() {
     return thousand;
 };
 
+Array.prototype.search = function(num){
+    var result = {};
+    var low = 0;
+    var high = this.length-1;
+    var mid;
+    var count = 0;
+    var found = false;
+
+   
+    while (low <= high){
+        mid = (low + high)/2 | 0;
+        if (this[mid] < num){
+            low = mid + 1;
+        }
+        else if (this[mid] > num){
+            high = mid - 1;
+        }
+        else{
+            found = true;
+            break;
+        }
+        count += 1;
+    }
+   
+
+    if (found == false){
+        mid = -1;
+    }
+    
+    result['count'] = count;
+    result['index']=  mid;
+    result['length']= this.length;
+    return result;
+}
 
 
+// var oneToTwenty = [].toTwenty();
+// var search = oneToTwenty.search(33);
 
+// var twoToForty = [].toForty();
+// var search  = twoToForty.search(33);
 
-// module.exports = {
-// 	toTwenty: toTwenty,
-// 	toForty: toForty,
-// 	toOneThousand: toOneThousand
-// }
+// var tenToOneThousand = [].toOneThousand();
+// var search  = tenToOneThousand.search(40);
+
+// console.log(search);
+// console.log(search.length);
+// console.log(search.count);
+// console.log(search.index);
